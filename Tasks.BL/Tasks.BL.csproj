@@ -4,4 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Task.Data\Tasks.Data.csproj" />
+    <ProjectReference Include="..\Tasks.Common\Tasks.Common.csproj" />
+    <ProjectReference Include="..\Tasks.Models\Tasks.Models.csproj" />
+  </ItemGroup>
+
 </Project>
