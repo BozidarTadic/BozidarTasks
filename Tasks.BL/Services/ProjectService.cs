@@ -11,7 +11,7 @@ using Tasks.Models.Dtos;
 
 namespace Tasks.BL.Services
 {
-    class ProjectService : IProjectService
+    public class ProjectService : IProjectService
     {
         private TasksEntities _entity;
         public Response<ProjectDto> Create(ProjectDto projectDto)
@@ -32,7 +32,7 @@ namespace Tasks.BL.Services
             try
             {
                
-                _entity.Projects.Update(project);
+                _entity.Projects.Add(project);
                 response.Content = projectDto;
                 response.StatusCode = System.Net.HttpStatusCode.OK;
 
@@ -128,16 +128,18 @@ namespace Tasks.BL.Services
         public Response<ProjectDto> Update(ProjectDto projectDto)
         {
             Response<ProjectDto> response = new Response<ProjectDto>();
+            Project project = _entity.Projects.Where(p => p.Id == projectDto.id).FirstOrDefault();
 
+            project.Name = projectDto.name;
+            project.PriorityId = projectDto.PriorityId;
+            project.CompletionDate = projectDto.CompletionDate;
             try
             {
-                Project project = _entity.Projects.Where(p => p.Id == projectDto.id).FirstOrDefault();
+                
 
-                project.Name = projectDto.name;
-                project.PriorityId = projectDto.PriorityId;
-                project.CompletionDate = projectDto.CompletionDate;
-
-
+                _entity.Projects.Update(project);
+                response.Content = projectDto;
+                response.StatusCode = System.Net.HttpStatusCode.OK;
             }
             catch (Exception)
             {

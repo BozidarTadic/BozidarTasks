@@ -15,6 +15,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tasks.BL.Interfaces;
+using Tasks.BL.Services;
 using Tasks.Data;
 using Tasks.Data.Data;
 
@@ -32,9 +34,10 @@ namespace Task.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
-
+            //add conection do database
             services.AddDbContext<TasksEntities>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -42,6 +45,10 @@ namespace Task.API
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            //add service 
+
+            services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<ITaskService, TaskService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

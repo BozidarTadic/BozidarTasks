@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Task.Data\Tasks.Data.csproj" />
+    <ProjectReference Include="..\Tasks.BL\Tasks.BL.csproj" />
   </ItemGroup>
 
 </Project>
