@@ -6,9 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Task.Data\Tasks.Data.csproj" />
-    <ProjectReference Include="..\tasks.Authorization\tasks.Authorization.csproj" />
     <ProjectReference Include="..\Tasks.Common\Tasks.Common.csproj" />
-    <ProjectReference Include="..\Tasks.Models\Tasks.Models.csproj" />
   </ItemGroup>
 
 </Project>
