@@ -15,5 +15,6 @@ namespace Tasks.BL.Interfaces
         Response<NoValue> Delete(int id);
         Response<TaskDto> Update(TaskDto taskDto);
         Response<TaskDto> create(TaskDto taskDto);
+        Response<List<TaskDto>> getByProjectId(int id);
     }
 }
