@@ -16,12 +16,62 @@ namespace Tasks.BL.Services
         private TasksEntities _entity;
         public Response<ProjectDto> Create(ProjectDto projectDto)
         {
-            throw new NotImplementedException();
+            Response<ProjectDto> response = new Response<ProjectDto>();
+
+            Project project = new Project
+            {
+                Name = projectDto.name,
+                StartDate = DateTime.Now,
+                CompletionDate = null,
+                PriorityId = projectDto.PriorityId,
+                CurrentStatusId = 0
+
+            };
+
+
+            try
+            {
+               
+                _entity.Projects.Update(project);
+                response.Content = projectDto;
+                response.StatusCode = System.Net.HttpStatusCode.OK;
+
+            }
+            catch (Exception)
+            {
+
+                response.StatusCode = System.Net.HttpStatusCode.NotFound;
+            }
+
+            return response;
         }
 
         public Response<NoValue> Delete(int id)
         {
-            throw new NotImplementedException();
+            Response<NoValue> response = new Response<NoValue>();
+
+            try
+            {
+               Project project = _entity.Projects.Where(p => p.Id == id).First();
+               if (project == null)
+                {
+                    response.StatusCode = System.Net.HttpStatusCode.NotFound;
+                    return response;
+                }
+               else
+                {
+                    _entity.Projects.Remove(project);
+                    response.StatusCode = System.Net.HttpStatusCode.OK;
+
+                }
+            }
+            catch (Exception)
+            {
+
+                response.StatusCode = System.Net.HttpStatusCode.NotFound;
+            }
+
+            return response;
         }
 
         public Response<List<ProjectDto>> GetProects()
@@ -43,7 +93,7 @@ namespace Tasks.BL.Services
             catch (Exception)
             {
 
-                throw;
+                response.StatusCode = System.Net.HttpStatusCode.NotFound;
             }
 
             return response;
@@ -51,12 +101,51 @@ namespace Tasks.BL.Services
 
         public Response<ProjectDto> GetProject(int id)
         {
-            throw new NotImplementedException();
+            Response<ProjectDto> response = new Response<ProjectDto>();
+
+            try
+            {
+                response.Content = _entity.Projects.Where(p => p.Id == id).Select(x =>new ProjectDto
+                {
+                    id = x.Id,
+                    CompletionDate= (DateTime)x.CompletionDate,
+                    name = x.Name,
+                    CurrentstatusId = x.CurrentStatusId,
+                    StartDate = x.StartDate,
+                    PriorityId = x.PriorityId
+                }).FirstOrDefault();
+                response.StatusCode = System.Net.HttpStatusCode.OK;
+            }
+            catch (Exception)
+            {
+
+                response.StatusCode = System.Net.HttpStatusCode.NotFound;
+            }
+
+            return response;
         }
 
         public Response<ProjectDto> Update(ProjectDto projectDto)
         {
-            throw new NotImplementedException();
+            Response<ProjectDto> response = new Response<ProjectDto>();
+
+            try
+            {
+                Project project = _entity.Projects.Where(p => p.Id == projectDto.id).FirstOrDefault();
+
+                project.Name = projectDto.name;
+                project.PriorityId = projectDto.PriorityId;
+                project.CompletionDate = projectDto.CompletionDate;
+
+
+            }
+            catch (Exception)
+            {
+
+                response.StatusCode = System.Net.HttpStatusCode.NotFound;
+            }
+
+            return response;
         }
     }
 }
