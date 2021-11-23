@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task.API", "Task.API\Task.API.csproj", "{714D7A52-5FC0-4A30-9905-379468C1A4F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.API", "Task.API\Task.API.csproj", "{714D7A52-5FC0-4A30-9905-379468C1A4F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Data", "Task.Data\Tasks.Data.csproj", "{5E98A48A-23B3-4380-BF95-C6CA58D4D778}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Data", "Task.Data\Tasks.Data.csproj", "{5E98A48A-23B3-4380-BF95-C6CA58D4D778}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.BL", "Tasks.BL\Tasks.BL.csproj", "{769B831D-826C-4F1C-ABB8-50C0ECF1D870}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.BL", "Tasks.BL\Tasks.BL.csproj", "{769B831D-826C-4F1C-ABB8-50C0ECF1D870}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Infrastructure", "Tasks.Infrastructure\Tasks.Infrastructure.csproj", "{D3FFF1DB-1F33-48BE-AD3C-E556D85330AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Infrastructure", "Tasks.Infrastructure\Tasks.Infrastructure.csproj", "{D3FFF1DB-1F33-48BE-AD3C-E556D85330AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Models", "Tasks.Models\Tasks.Models.csproj", "{78E7F127-B1A1-47CF-A678-5F799BB1A17F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Models", "Tasks.Models\Tasks.Models.csproj", "{78E7F127-B1A1-47CF-A678-5F799BB1A17F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Common", "Tasks.Common\Tasks.Common.csproj", "{52DBDB80-DAE6-42FF-8FCB-1F459182C902}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Common", "Tasks.Common\Tasks.Common.csproj", "{52DBDB80-DAE6-42FF-8FCB-1F459182C902}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Tests", "Tasks.Tests\Tasks.Tests.csproj", "{0B5A6DD7-E35F-4102-9B2B-D0B41EC61E0A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tasks.Authorization", "tasks.Authorization\tasks.Authorization.csproj", "{78E3AA21-2A0B-4E16-8D25-715D5B4100C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{52DBDB80-DAE6-42FF-8FCB-1F459182C902}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52DBDB80-DAE6-42FF-8FCB-1F459182C902}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52DBDB80-DAE6-42FF-8FCB-1F459182C902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B5A6DD7-E35F-4102-9B2B-D0B41EC61E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B5A6DD7-E35F-4102-9B2B-D0B41EC61E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B5A6DD7-E35F-4102-9B2B-D0B41EC61E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B5A6DD7-E35F-4102-9B2B-D0B41EC61E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E3AA21-2A0B-4E16-8D25-715D5B4100C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E3AA21-2A0B-4E16-8D25-715D5B4100C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E3AA21-2A0B-4E16-8D25-715D5B4100C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E3AA21-2A0B-4E16-8D25-715D5B4100C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
