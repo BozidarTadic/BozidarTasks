@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Tasks.DAL.Models;
 
 #nullable disable
 
@@ -16,7 +17,7 @@ namespace Tasks.Data.Data
             : base(options)
         {
         }
-
+        public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<CurrentStatus> CurrentStatuses { get; set; }
         public virtual DbSet<Priority> Priorities { get; set; }
         public virtual DbSet<Project> Projects { get; set; }

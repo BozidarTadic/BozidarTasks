@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Task.Data\Tasks.Data.csproj" />
     <ProjectReference Include="..\tasks.Authorization\tasks.Authorization.csproj" />
     <ProjectReference Include="..\Tasks.Common\Tasks.Common.csproj" />
